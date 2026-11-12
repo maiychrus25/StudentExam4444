@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="form_width">480dp</dimen>
+    <dimen name="card_width">600dp</dimen>
+</resources>

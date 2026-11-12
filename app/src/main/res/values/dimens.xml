@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="form_width">-1px</dimen>
+    <dimen name="card_width">-1px</dimen>
+</resources>

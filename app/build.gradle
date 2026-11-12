@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+kotlin { jvmToolchain(17) }
+android {
+    namespace = 'com.example.studentexam'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'com.example.studentexam'
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName '1.0'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    lint {
+        warningsAsErrors = true
+        abortOnError = true
+        // SDK36 is pinned to the existing AGP8.13 toolchain (supports up to36.1).
+        disable += ['OldTargetApi']
+    }
+}
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test:runner:1.7.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+}

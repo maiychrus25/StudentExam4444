@@ -1,0 +1,13 @@
+<resources>
+    <color name="page">#FFFFFF</color>
+    <color name="card_page">#FCF7FF</color>
+    <color name="form_surface">#E1F7FA</color>
+    <color name="card_surface">#FFFFFF</color>
+    <color name="title">#087D8C</color>
+    <color name="primary">#007F9F</color>
+    <color name="text">#20252A</color>
+    <color name="secondary">#555D65</color>
+    <color name="avatar">#5C9FCD</color>
+    <color name="status">#467C0B</color>
+    <color name="error">#B3261E</color>
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- khung dọc, phần nhập có thể cuộn, nút và TextView lỗi ở cuối. -->
+<FrameLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <!-- Khung ngoài nhận inset hệ thống, khung trong giữ đúng padding16dp. -->
+    <LinearLayout tools:ignore="UselessParent" android:id="@+id/main"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:padding="16dp">
+    <TextView android:id="@+id/formTitle" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:gravity="center" android:paddingVertical="24dp"
+        android:text="@string/form_title" android:textColor="@color/title"
+        android:textSize="26sp" android:textStyle="bold" />
+    <!-- ScrollView có một con trực tiếp là FrameLayout, bên trong đặt form. -->
+    <ScrollView android:id="@+id/formScroll" android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true"
+        android:clipToPadding="false">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingVertical="8dp">
+            <!-- Wrapper giữ form480dp căn giữa trong viewport: cần trên màn hình rộng. -->
+            <LinearLayout tools:ignore="UselessParent" android:id="@+id/formPanel" android:layout_width="@dimen/form_width"
+                android:layout_height="wrap_content" android:orientation="vertical"
+                android:padding="16dp" android:layout_margin="4dp" android:layout_gravity="center"
+                android:background="@drawable/form_background" android:elevation="2dp">
+                <TextView style="@style/FormLabel" android:text="@string/full_name" />
+                <EditText android:id="@+id/fullNameInput" style="@style/FormInput"
+                    android:autofillHints="name" android:hint="@string/full_name_hint" android:inputType="textPersonName" />
+                <TextView style="@style/FormLabel" android:text="@string/email" />
+                <EditText android:id="@+id/emailInput" style="@style/FormInput"
+                    android:autofillHints="emailAddress" android:hint="@string/email_hint" android:inputType="textEmailAddress" />
+                <TextView style="@style/FormLabel" android:text="@string/phone" />
+                <!-- Cho phép nhập chữ để quan sát TextWatcher báo lỗi, không lọc mất ký tự sai. -->
+                <EditText android:id="@+id/phoneInput" style="@style/FormInput"
+                    android:autofillHints="phoneNumber" tools:ignore="TextFields" android:hint="@string/phone_hint" android:inputType="textNoSuggestions" />
+                <TextView style="@style/FormLabel" android:text="@string/major" />
+                <EditText android:id="@+id/majorInput" style="@style/FormInput"
+                    android:importantForAutofill="no" android:hint="@string/major_hint" android:inputType="textCapWords" android:imeOptions="actionDone" />
+                <TextView style="@style/FormLabel" android:text="@string/gender" android:labelFor="@id/genderGroup" />
+                <RadioGroup android:id="@+id/genderGroup" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal">
+                    <RadioButton android:id="@+id/maleOption" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:minHeight="48dp" android:minWidth="72dp"
+                        android:text="@string/male" android:textColor="@color/text" />
+                    <RadioButton android:id="@+id/femaleOption" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:minHeight="48dp" android:minWidth="72dp"
+                        android:text="@string/female" android:textColor="@color/text" />
+                </RadioGroup>
+                <TextView android:id="@+id/genderError" style="@style/FormLabel"
+                    android:text="@string/required_gender" android:textColor="@color/error"
+                    android:visibility="gone" android:accessibilityLiveRegion="polite" />
+            </LinearLayout>
+        </FrameLayout>
+    </ScrollView>
+    <Button android:id="@+id/sendButton" android:layout_width="@dimen/form_width"
+        android:layout_height="wrap_content" android:minHeight="48dp" android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp" android:background="@drawable/send_background"
+        android:text="@string/send_information" android:textAllCaps="false" android:textColor="#FFFFFF" />
+    <!-- Câu 3a: đúng một TextView cuối màn hình báo số điện thoại không phải số. -->
+    <TextView android:id="@+id/phoneError" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:minHeight="24dp" android:paddingTop="4dp"
+        android:textSize="14sp" android:textColor="@color/error" android:accessibilityLiveRegion="polite" />
+</LinearLayout>
+</FrameLayout>

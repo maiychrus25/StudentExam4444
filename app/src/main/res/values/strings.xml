@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Bài kiểm tra 44844</string>
+    <string name="form_title">Thông tin sinh viên</string>
+    <string name="full_name">Họ tên</string>
+    <string name="full_name_hint">Nhập họ tên</string>
+    <string name="email">Email</string>
+    <string name="email_hint">Nhập email</string>
+    <string name="phone">Số điện thoại</string>
+    <string name="phone_hint">Nhập số điện thoại</string>
+    <string name="major">Ngành học</string>
+    <string name="major_hint">Nhập ngành học</string>
+    <string name="gender">Giới tính</string>
+    <string name="male">Nam</string>
+    <string name="female">Nữ</string>
+    <string name="send_information">Gửi Thông Tin</string>
+    <string name="required_field">Không được bỏ trống</string>
+    <string name="required_gender">Vui lòng chọn giới tính</string>
+    <string name="phone_invalid">Số điện thoại chỉ được chứa chữ số 0–9.</string>
+    <string name="required_summary">Vui lòng nhập đủ thông tin và chọn giới tính.</string>
+    <string name="student_name_sample">Tên sinh viên</string>
+    <string name="student_id">Mã sinh viên: 123456789</string>
+    <string name="student_class">Lớp: CNTT K43</string>
+    <string name="student_status">Trạng thái: Đang học</string>
+    <string name="edit_information">Sửa thông tin sinh viên</string>
+</resources>

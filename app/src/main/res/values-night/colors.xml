@@ -1,0 +1,11 @@
+<resources>
+    <color name="page">#131B20</color>
+    <color name="card_page">#131B20</color>
+    <color name="form_surface">#20373E</color>
+    <color name="card_surface">#202A31</color>
+    <color name="title">#81D9E4</color>
+    <color name="text">#F1F5F7</color>
+    <color name="secondary">#C1CDD4</color>
+    <color name="status">#B0DE7D</color>
+    <color name="error">#FFB4AB</color>
+</resources>
